@@ -6,6 +6,7 @@ export default function ContactSection() {
   const primaryContact = Object.values(DATA.contact.social).find(
     (s) => (s as { primary?: boolean }).primary
   );
+  const isExternal = primaryContact?.url.startsWith("http") ?? false;
 
   return (
     <div className="border rounded-xl p-10 relative">
@@ -32,8 +33,9 @@ export default function ContactSection() {
           {primaryContact ? (
             <Link
               href={primaryContact.url}
-              target="_blank"
-              rel="noopener noreferrer"
+              {...(isExternal
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
               className="text-blue-500 hover:underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
             >
               email
