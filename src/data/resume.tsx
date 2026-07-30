@@ -1,16 +1,15 @@
 import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon } from "lucide-react";
+import { Typescript } from "@/components/ui/svgs/typescript";
+import { Rust } from "@/components/ui/svgs/rust";
 import { ReactLight } from "@/components/ui/svgs/reactLight";
 import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark";
-import { Typescript } from "@/components/ui/svgs/typescript";
+import { Astro } from "@/components/ui/svgs/astro";
 import { Nodejs } from "@/components/ui/svgs/nodejs";
-import { Python } from "@/components/ui/svgs/python";
-import { Golang } from "@/components/ui/svgs/golang";
-import { Postgresql } from "@/components/ui/svgs/postgresql";
+import { NodeRed } from "@/components/ui/svgs/nodeRed";
+import { MongoDB } from "@/components/ui/svgs/mongodb";
+import { Tauri } from "@/components/ui/svgs/tauri";
 import { Docker } from "@/components/ui/svgs/docker";
-import { Kubernetes } from "@/components/ui/svgs/kubernetes";
-import { Java } from "@/components/ui/svgs/java";
-import { Csharp } from "@/components/ui/svgs/csharp";
 
 export const DATA = {
   name: "Daniel Sierra",
@@ -24,17 +23,23 @@ export const DATA = {
     "I am a [telecommunications and electronics engineer](/#education) who writes code. Since 2022 I have been building IoT monitoring systems end to end — LoRa, Zigbee and NB-IoT sensors feeding real-time dashboards through Node-RED and MQTT — for the energy, logistics and environmental sectors. I taught myself web development in 2020 and never stopped: today I move between React and Astro on the frontend, Node-RED and MongoDB on the backend, and Rust when a problem deserves a real tool. I care about the unglamorous parts — reconnection logic, CRC checks, deployments that survive a bad network — because in this field those are what actually break.",
   avatarUrl: "",
   skills: [
+    { name: "TypeScript", icon: Typescript },
+    { name: "Rust", icon: Rust },
     { name: "React", icon: ReactLight },
     { name: "Next.js", icon: NextjsIconDark },
-    { name: "Typescript", icon: Typescript },
+    { name: "Astro", icon: Astro },
+    { name: "Tailwind CSS", icon: Icons.tailwindcss },
     { name: "Node.js", icon: Nodejs },
-    { name: "Python", icon: Python },
-    { name: "Go", icon: Golang },
-    { name: "Postgres", icon: Postgresql },
+    { name: "Node-RED", icon: NodeRed },
+    { name: "MongoDB", icon: MongoDB },
+    { name: "Tauri", icon: Tauri },
+    { name: "React Native", icon: undefined },
     { name: "Docker", icon: Docker },
-    { name: "Kubernetes", icon: Kubernetes },
-    { name: "Java", icon: Java },
-    { name: "C++", icon: Csharp },
+    { name: "MQTT", icon: undefined },
+    { name: "LoRa", icon: undefined },
+    { name: "NB-IoT", icon: undefined },
+    { name: "Zigbee", icon: undefined },
+    { name: "Modbus RTU", icon: undefined },
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
