@@ -1,9 +1,11 @@
 import type { SVGProps } from "react";
 
 /**
- * Node-RED mark — single-colour, theme-safe.
+ * Node-RED mark.
  * Path from simpleicons.org (slug: nodered), CC0 brand guidelines.
- * Uses currentColor so it inherits the badge foreground in both light and dark mode.
+ * Deliberate exception to the brand-colour convention used by the other skill
+ * icons: the Node-RED brand red (#8F0000) is too dark to read against the dark
+ * theme background. currentColor keeps the mark legible in both themes.
  */
 const NodeRed = (props: SVGProps<SVGSVGElement>) => (
   <svg
