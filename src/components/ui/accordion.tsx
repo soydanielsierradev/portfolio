@@ -43,12 +43,19 @@ const AccordionContent = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
 >(({ className, children, ...props }, ref) => (
+  // grid-rows 0fr→1fr collapses the content while keeping it mounted. This
+  // matters because work-section passes forceMount (so descriptions stay in the
+  // server HTML for crawlers); forceMount defeats Radix's own `hidden`
+  // collapsing, so we drive the collapse from data-state here instead. The
+  // inner overflow-hidden wrapper is required for the 0fr track to clip.
   <AccordionPrimitive.Content
     ref={ref}
-    className="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    className="grid overflow-hidden text-sm transition-[grid-template-rows] duration-300 ease-out data-[state=closed]:grid-rows-[0fr] data-[state=open]:grid-rows-[1fr]"
     {...props}
   >
-    <div className={cn("pb-4 pt-0", className)}>{children}</div>
+    <div className="overflow-hidden">
+      <div className={cn("pb-4 pt-0", className)}>{children}</div>
+    </div>
   </AccordionPrimitive.Content>
 ))
 AccordionContent.displayName = AccordionPrimitive.Content.displayName
