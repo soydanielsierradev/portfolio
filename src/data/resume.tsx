@@ -28,6 +28,15 @@ import { Stripe } from "@/components/ui/svgs/stripe";
 export const DATA = {
   name: "Daniel Sierra",
   initials: "DS",
+  // Hero headline rotation: starts on the name, then cycles through roles.
+  // Each entry follows "Hi, I'm ", so keep the article ("a"/"an") in the string.
+  heroRoles: [
+    "Daniel",
+    "a Frontend Developer",
+    "an IoT Engineer",
+    "a Fullstack Developer",
+    "a Telecom Engineer",
+  ],
   url: "https://danielsierra.vercel.app",
   location: "Havana, Cuba",
   locationLink: "https://www.google.com/maps/place/havana",
