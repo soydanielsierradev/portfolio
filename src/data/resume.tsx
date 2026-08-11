@@ -208,18 +208,6 @@ export const DATA = {
       video: "",
     },
     {
-      title: "Parking LPR System",
-      href: "",
-      dates: "January 2025",
-      active: true,
-      description:
-        "Frontend for a license plate recognition parking system delivered to an international client. React and Tailwind CSS interface over a Node-RED backend with MongoDB, covering live plate reads, access events and vehicle history. Client work — source and deployment are private.",
-      technologies: ["React", "Tailwind CSS", "Node-RED", "MongoDB", "Docker"],
-      links: [],
-      image: "",
-      video: "",
-    },
-    {
       title: "ConnexIA Soluciones",
       href: "https://connexiasoluciones.vercel.app",
       dates: "May 2025 - February 2026",
