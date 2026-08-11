@@ -137,7 +137,7 @@ export default function Page() {
       */}
       <section
         id="projects"
-        className="lg:relative lg:left-1/2 lg:w-[56rem] lg:max-w-[calc(100vw-3rem)] lg:-translate-x-1/2"
+        className="lg:relative lg:left-1/2 lg:w-[60rem] lg:max-w-[calc(100vw-3rem)] lg:-translate-x-1/2"
       >
         <BlurFade delay={BLUR_FADE_DELAY * 11}>
           <ProjectsSection />
