@@ -5,8 +5,12 @@ import { DATA } from "@/data/resume";
 const BLUR_FADE_DELAY = 0.04;
 
 export default function ProjectsSection() {
+    // The homepage (src/app/page.tsx) already wraps this component in
+    // <section id="projects">. Rendering another one here produced a duplicate
+    // id on the page — invalid HTML and an ambiguous #projects anchor. A plain
+    // grouping <div> is all this level needs.
     return (
-        <section id="projects">
+        <div>
             <div className="flex min-h-0 flex-col gap-y-8">
                 <div className="flex flex-col gap-y-4 items-center justify-center">
                     <div className="flex items-center w-full">
@@ -53,7 +57,7 @@ export default function ProjectsSection() {
                     ))}
                 </div>
             </div>
-        </section>
+        </div>
     );
 }
 
