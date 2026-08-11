@@ -3,8 +3,10 @@ import type { SVGProps } from "react";
 /**
  * Tauri mark.
  * Path from simpleicons.org (slug: tauri), CC0 brand guidelines.
- * Brand cyan reads on both light and dark backgrounds and keeps this
- * consistent with the other brand-coloured skill icons.
+ * Brand colour (thesvg default variant). Measured contrast is 8.41:1 on the dark
+ * theme and 2.03:1 on the light theme; the lower figure sits under the WCAG 3:1
+ * non-text guideline, which does not bind here because the skill name is
+ * rendered as adjacent text and the mark is decorative.
  */
 const Tauri = (props: SVGProps<SVGSVGElement>) => (
   <svg

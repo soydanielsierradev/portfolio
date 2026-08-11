@@ -10,6 +10,20 @@ import { NodeRed } from "@/components/ui/svgs/nodeRed";
 import { MongoDB } from "@/components/ui/svgs/mongodb";
 import { Tauri } from "@/components/ui/svgs/tauri";
 import { Docker } from "@/components/ui/svgs/docker";
+import { ReactNative } from "@/components/ui/svgs/reactNative";
+import { MQTT } from "@/components/ui/svgs/mqtt";
+import { Zigbee } from "@/components/ui/svgs/zigbee";
+import { NestJS } from "@/components/ui/svgs/nestjs";
+import { Supabase } from "@/components/ui/svgs/supabase";
+import { PocketBase } from "@/components/ui/svgs/pocketbase";
+import { PostgreSQL } from "@/components/ui/svgs/postgresql";
+import { SQLite } from "@/components/ui/svgs/sqlite";
+import { InfluxDB } from "@/components/ui/svgs/influxdb";
+import { Grafana } from "@/components/ui/svgs/grafana";
+import { Shopify } from "@/components/ui/svgs/shopify";
+import { Modbus } from "@/components/ui/svgs/modbus";
+import { LoRa } from "@/components/ui/svgs/lora";
+import { Stripe } from "@/components/ui/svgs/stripe";
 
 export const DATA = {
   name: "Daniel Sierra",
@@ -21,7 +35,9 @@ export const DATA = {
     "Telecommunications engineer who builds software. I work where hardware meets the web: IoT monitoring, industrial protocols, and the interfaces that turn sensor data into something people can actually use.",
   summary:
     "I am a [telecommunications and electronics engineer](/#education) who writes code. Since 2022 I have been building IoT monitoring systems end to end — LoRa, Zigbee and NB-IoT sensors feeding real-time dashboards through Node-RED and MQTT — for the energy, logistics and environmental sectors. I taught myself web development in 2020 and never stopped: today I move between React and Astro on the frontend, Node-RED and MongoDB on the backend, and Rust when a problem deserves a real tool. I care about the unglamorous parts — reconnection logic, CRC checks, deployments that survive a bad network — because in this field those are what actually break.",
-  avatarUrl: "",
+  avatarUrl: "/me.jpg",
+  // Grouped by area so the row reads as a stack rather than a flat word cloud:
+  // languages, frontend, backend, data, IoT, tooling.
   skills: [
     { name: "TypeScript", icon: Typescript },
     { name: "Rust", icon: Rust },
@@ -29,17 +45,25 @@ export const DATA = {
     { name: "Next.js", icon: NextjsIconDark },
     { name: "Astro", icon: Astro },
     { name: "Tailwind CSS", icon: Icons.tailwindcss },
-    { name: "Node.js", icon: Nodejs },
-    { name: "Node-RED", icon: NodeRed },
-    { name: "MongoDB", icon: MongoDB },
+    { name: "React Native", icon: ReactNative },
     { name: "Tauri", icon: Tauri },
-    { name: "React Native", icon: undefined },
+    { name: "Node.js", icon: Nodejs },
+    { name: "NestJS", icon: NestJS },
+    { name: "Node-RED", icon: NodeRed },
+    { name: "Supabase", icon: Supabase },
+    { name: "PocketBase", icon: PocketBase },
+    { name: "PostgreSQL", icon: PostgreSQL },
+    { name: "MongoDB", icon: MongoDB },
+    { name: "SQLite", icon: SQLite },
+    { name: "InfluxDB", icon: InfluxDB },
+    { name: "Grafana", icon: Grafana },
+    { name: "MQTT", icon: MQTT },
+    { name: "LoRa", icon: LoRa },
+    { name: "Zigbee", icon: Zigbee },
+    { name: "Modbus RTU/TCP", icon: Modbus },
     { name: "Docker", icon: Docker },
-    { name: "MQTT", icon: undefined },
-    { name: "LoRa", icon: undefined },
-    { name: "NB-IoT", icon: undefined },
-    { name: "Zigbee", icon: undefined },
-    { name: "Modbus RTU", icon: undefined },
+    { name: "Shopify", icon: Shopify },
+    { name: "Stripe", icon: Stripe },
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
@@ -65,30 +89,54 @@ export const DATA = {
     },
   },
 
+  // Reverse chronological by end date. work-section.tsx renders this array as
+  // given, so the order here is the order on the page.
   work: [
+    {
+      company: "Freelance",
+      href: "",
+      badges: [],
+      location: "Havana, Cuba",
+      title: "Fullstack Developer",
+      // Freelance is not a company, so there is no mark to borrow. Daniel's own
+      // DS monogram stands in, matching the generated favicon in app/icon.tsx.
+      // White on near-black keeps the glyph legible on both themes, which matters
+      // because an <img> cannot respond to the theme. The font is a system stack
+      // rather than outlined paths (no text-to-path tooling available); the same
+      // tradeoff icon.tsx already makes.
+      logoUrl: "/logos/freelance.svg",
+      start: "2022",
+      end: "Present",
+      description:
+        "Build monitoring applications and web products for national and international clients. Delivered a license plate recognition (LPR) parking system in React and Tailwind CSS backed by Node-RED and MongoDB, plus complete IoT sensor monitoring apps for the energy and logistics sectors. Also ship SEO-optimized landing pages in Astro. Everything version-controlled with Git, written modular, and deployed with Docker.",
+    },
+    {
+      company: "ConnexIA Soluciones",
+      href: "https://connexiasoluciones.vercel.app",
+      badges: [],
+      location: "Havana, Cuba",
+      title: "Fullstack Developer",
+      // Trimmed from the company's own /img/logo.png, which ships with heavy
+      // whitespace padding that would shrink the mark inside the 40px circle.
+      logoUrl: "/logos/connexia.png",
+      start: "2024",
+      end: "2026",
+      description:
+        "Built fleet monitoring platforms and automation applications end to end, owning the infrastructure design, the data flow from field device to operator dashboard, and the application code itself rather than a single layer of it. Also delivered the company's corporate site in Astro, engineered for near-zero JavaScript so it loads fast on unreliable connections.",
+    },
     {
       company: "COPEXTEL TVS",
       href: "",
       badges: [],
       location: "Havana, Cuba",
       title: "Radiocommunications Specialist, IoT Solutions",
-      logoUrl: "",
+      // Supplied by Daniel; copextel.com.cu is not reachable from outside Cuba.
+      // White background keyed out so the mark sits on either theme.
+      logoUrl: "/logos/copextel.png",
       start: "2022",
-      end: "Present",
+      end: "2024",
       description:
-        "Design and deploy IoT monitoring solutions for environmental, electrical and geospatial applications. Built real-time sensor acquisition over LoRa, Zigbee and NB-IoT orchestrated in Node-RED with MQTT transport, persisting to MongoDB through a microservice layer. Developed the custom dashboards and interactive visualizations operators use daily, designed responsive and cross-platform so they work from a control room or a phone in the field. Work carried out in interdisciplinary teams alongside RF and electrical engineers.",
-    },
-    {
-      company: "Freelance",
-      href: "",
-      badges: [],
-      location: "Havana, Cuba",
-      title: "Frontend & IoT Solutions Developer",
-      logoUrl: "",
-      start: "2022",
-      end: "Present",
-      description:
-        "Build monitoring applications and web products for national and international clients. Delivered the frontend of a license plate recognition (LPR) parking system in React and Tailwind CSS backed by Node-RED and MongoDB, plus complete IoT sensor monitoring apps for the energy and logistics sectors. Also ship SEO-optimized landing pages in Astro. Everything version-controlled with Git, written modular, and deployed with Docker.",
+        "Designed and deployed IoT monitoring solutions for environmental, electrical and geospatial applications. Built real-time sensor acquisition over LoRa, Zigbee and NB-IoT orchestrated in Node-RED with MQTT transport, persisting to MongoDB through a microservice layer. Developed the custom dashboards and interactive visualizations operators used daily, designed responsive and cross-platform so they worked from a control room or a phone in the field. Work carried out in interdisciplinary teams alongside RF and electrical engineers.",
     },
   ],
   education: [
@@ -96,7 +144,10 @@ export const DATA = {
       school: "Universidad Tecnológica de La Habana José Antonio Echeverría (CUJAE)",
       href: "https://www.cujae.edu.cu",
       degree: "Telecommunications and Electronics Engineering",
-      logoUrl: "",
+      // CUJAE isotipo from Wikimedia Commons (File:Isotipo.png, CC BY-SA 4.0).
+      // cujae.edu.cu is not reachable from outside Cuba, so the asset is served
+      // locally rather than hotlinked.
+      logoUrl: "/logos/cujae.png",
       start: "2019",
       end: "2024",
     },

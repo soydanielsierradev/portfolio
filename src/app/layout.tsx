@@ -63,7 +63,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      {/*
+        Browser extensions (ColorZilla, Grammarly, password managers) add their own
+        attributes to <body> before React hydrates, which React reports as a
+        hydration mismatch. The server never emits those attributes, so there is
+        nothing to fix in this tree. suppressHydrationWarning is scoped to this
+        element's own attributes and text — it does not silence its descendants —
+        so a real mismatch anywhere inside the app is still reported.
+      */}
       <body
+        suppressHydrationWarning
         className={cn(
           "min-h-screen bg-background font-sans antialiased relative",
           geist.variable,
