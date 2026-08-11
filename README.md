@@ -1,47 +1,41 @@
-<div align="center">
-<img alt="Portfolio" src="https://github.com/dillionverma/portfolio/assets/16860528/57ffca81-3f0a-4425-b31d-094f61725455" width="90%">
-</div>
+# Daniel Sierra — Portfolio
 
-# Portfolio [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fdillionverma%2Fportfolio)
+Personal site of Daniel Sierra, a telecommunications engineer who builds
+software. It presents his work in IoT monitoring, industrial protocols, and the
+web interfaces that turn sensor data into something people can use.
 
-Built with next.js, [shadcn/ui](https://ui.shadcn.com/), and [magic ui](https://magicui.design/), deployed on Vercel.
+Live at **[danielsierra.vercel.app](https://danielsierra.vercel.app)**.
 
-# Features
+## Stack
 
-- Setup only takes a few minutes by editing the [single config file](./src/data/resume.tsx)
-- Built using Next.js 14, React, Typescript, Shadcn/UI, TailwindCSS, Framer Motion, Magic UI
-- Includes a blog
-- Responsive for different devices
-- Optimized for Next.js and Vercel
+- **Next.js 16** (App Router) · **React 19** · **TypeScript** (strict)
+- **Tailwind CSS v4** with [shadcn/ui](https://ui.shadcn.com) and [Magic UI](https://magicui.design)
+- **content-collections** for the MDX blog
+- Deployed on **Vercel**
 
-# Getting Started Locally
+## Running locally
 
-1. Clone this repository to your local machine:
+```bash
+pnpm install
+pnpm dev
+```
 
-   ```bash
-   git clone https://github.com/dillionverma/portfolio
-   ```
+The site is driven by a single config file: [`src/data/resume.tsx`](./src/data/resume.tsx).
+Identity, skills, work history, education, and projects all live there.
 
-2. Move to the cloned directory
+```bash
+pnpm lint    # eslint
+pnpm build   # production build
+```
 
-   ```bash
-   cd portfolio
-   ```
+## Credits
 
-3. Install dependencies:
+Based on the open-source portfolio template by
+[Dillion Verma](https://github.com/dillionverma/portfolio). The layout and
+component foundation are his; the content, technology marks, IoT-focused
+sections, SEO routes, and copy are original to this fork.
 
-   ```bash
-   pnpm install
-   ```
+## License
 
-4. Start the local Server:
-
-   ```bash
-   pnpm dev
-   ```
-
-5. Open the [Config file](./src/data/resume.tsx) and make changes
-
-# License
-
-Licensed under the [MIT license](https://github.com/dillionverma/portfolio/blob/main/LICENSE.md).
+[MIT](./LICENSE). Original template © Dillion Verma; personalization and
+additions © Daniel Sierra.
