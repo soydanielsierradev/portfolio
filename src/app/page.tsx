@@ -21,15 +21,18 @@ export default function Page() {
           <div className="gap-2 gap-y-6 flex flex-col md:flex-row justify-between">
             <div className="gap-2 flex flex-col order-2 md:order-1">
               {/*
-                BlurFade owns the mount animation for the whole line; WordRotate
-                owns the ongoing rotation of the trailing word. The word sits at
-                the end of the line, so as it changes length only the right edge
-                moves — "Hi, I'm" never shifts.
+                BlurFade owns the mount animation for the whole heading;
+                WordRotate owns the ongoing rotation. "Hi, I'm" and the rotating
+                word are each their own block, so the word always sits on the
+                line below — otherwise short roles fit beside the greeting while
+                long ones wrap, which reads inconsistently.
               */}
               <BlurFade delay={BLUR_FADE_DELAY} yOffset={8}>
                 <h1 className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl">
-                  Hi, I&apos;m{" "}
-                  <WordRotate words={DATA.heroRoles} />
+                  <span className="block">Hi, I&apos;m</span>
+                  <span className="block">
+                    <WordRotate words={DATA.heroRoles} />
+                  </span>
                 </h1>
               </BlurFade>
               <BlurFadeText
