@@ -79,7 +79,17 @@ export default function RootLayout({
           geistMono.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="light">
+        {/*
+          enableSystem={false} keeps light as the guaranteed default: without it
+          next-themes follows the visitor's OS preference, so a dark-mode OS
+          lands on the dark theme despite defaultTheme. The toggle still lets
+          anyone switch to dark manually.
+        */}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+        >
           <TooltipProvider delayDuration={0}>
             <div className="absolute inset-0 top-0 left-0 right-0 h-[100px] overflow-hidden z-0">
               <FlickeringGrid
