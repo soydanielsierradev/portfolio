@@ -129,7 +129,16 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section id="projects">
+      {/*
+        Projects break out of the page's max-w-2xl column on desktop so three
+        cards per row have room. left-1/2 + -translate-x-1/2 re-centres the wider
+        band on the viewport; the max-w guard keeps a gutter if the window is
+        narrower than the band. Scoped to lg, so tablet/mobile stay in-column.
+      */}
+      <section
+        id="projects"
+        className="lg:relative lg:left-1/2 lg:w-[56rem] lg:max-w-[calc(100vw-3rem)] lg:-translate-x-1/2"
+      >
         <BlurFade delay={BLUR_FADE_DELAY * 11}>
           <ProjectsSection />
         </BlurFade>
