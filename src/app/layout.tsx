@@ -80,14 +80,14 @@ export default function RootLayout({
         )}
       >
         {/*
-          enableSystem={false} keeps light as the guaranteed default: without it
-          next-themes follows the visitor's OS preference, so a dark-mode OS
-          lands on the dark theme despite defaultTheme. The toggle still lets
-          anyone switch to dark manually.
+          enableSystem={false} keeps dark as the guaranteed default: without it
+          next-themes follows the visitor's OS preference, so a light-mode OS
+          lands on the light theme despite defaultTheme. The toggle still lets
+          anyone switch to light manually.
         */}
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem={false}
         >
           <TooltipProvider delayDuration={0}>
