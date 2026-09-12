@@ -168,7 +168,7 @@ export const DATA = {
       dates: "April 2026",
       active: true,
       description:
-        "A custom Node-RED node that speaks Modbus RTU over a raw TCP socket — the frame, the CRC16, and the wire, without a gateway in between. Keeps a persistent connection with automatic reconnection and serializes requests through a queue so concurrent flows never interleave frames on the same link. Built for and tested against Ibercon RS485 devices.",
+        "A custom Node-RED node that speaks Modbus RTU over a raw TCP socket — the frame, the CRC16, and the wire, without a gateway in between. Keeps a persistent connection with automatic reconnection and serializes requests through a queue so concurrent flows never interleave frames on the same link. Built for and tested against RS485 devices.",
       technologies: ["Node.js", "Node-RED", "Modbus RTU", "TCP Sockets"],
       links: [
         {
