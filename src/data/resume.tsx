@@ -28,13 +28,22 @@ import { Stripe } from "@/components/ui/svgs/stripe";
 export const DATA = {
   name: "Daniel Sierra",
   initials: "DS",
+  // Hero headline rotation: starts on the name, then cycles through roles.
+  // Each entry follows "Hi, I'm ", so keep the article ("a"/"an") in the string.
+  heroRoles: [
+    "Daniel Sierra",
+    "a Frontend Developer",
+    "an IoT Engineer",
+    "a Fullstack Developer",
+    "a Telecom Engineer",
+  ],
   url: "https://danielsierra.vercel.app",
   location: "Havana, Cuba",
   locationLink: "https://www.google.com/maps/place/havana",
   description:
     "Telecommunications engineer who builds software. I work where hardware meets the web: IoT monitoring, industrial protocols, and the interfaces that turn sensor data into something people can actually use.",
   summary:
-    "I am a [telecommunications and electronics engineer](/#education) who writes code. Since 2022 I have been building IoT monitoring systems end to end — LoRa, Zigbee and NB-IoT sensors feeding real-time dashboards through Node-RED and MQTT — for the energy, logistics and environmental sectors. I taught myself web development in 2020 and never stopped: today I move between React and Astro on the frontend, Node-RED and MongoDB on the backend, and Rust when a problem deserves a real tool. I care about the unglamorous parts — reconnection logic, CRC checks, deployments that survive a bad network — because in this field those are what actually break.",
+    "I am a [telecommunications and electronics engineer](/#education) who writes code. Since 2022 I have been building IoT monitoring systems end to end — LoRa and Zigbee sensors feeding real-time dashboards through Node-RED and MQTT — for the energy, logistics and environmental sectors. I taught myself web development in 2020 and never stopped: today I move between React and Astro on the frontend, Node-RED and MongoDB on the backend, and Rust when a problem deserves a real tool. I care about the unglamorous parts — reconnection logic, CRC checks, deployments that survive a bad network — because in this field those are what actually break.",
   avatarUrl: "/me.jpg",
   // Grouped by area so the row reads as a stack rather than a flat word cloud:
   // languages, frontend, backend, data, IoT, tooling.
@@ -136,7 +145,7 @@ export const DATA = {
       start: "2022",
       end: "2024",
       description:
-        "Designed and deployed IoT monitoring solutions for environmental, electrical and geospatial applications. Built real-time sensor acquisition over LoRa, Zigbee and NB-IoT orchestrated in Node-RED with MQTT transport, persisting to MongoDB through a microservice layer. Developed the custom dashboards and interactive visualizations operators used daily, designed responsive and cross-platform so they worked from a control room or a phone in the field. Work carried out in interdisciplinary teams alongside RF and electrical engineers.",
+        "Designed and deployed IoT monitoring solutions for environmental, electrical and geospatial applications. Built real-time sensor acquisition over LoRa and Zigbee orchestrated in Node-RED with MQTT transport, persisting to MongoDB through a microservice layer. Developed the custom dashboards and interactive visualizations operators used daily, designed responsive and cross-platform so they worked from a control room or a phone in the field. Work carried out in interdisciplinary teams alongside RF and electrical engineers.",
     },
   ],
   education: [
@@ -204,18 +213,6 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
-      video: "",
-    },
-    {
-      title: "Parking LPR System",
-      href: "",
-      dates: "January 2025",
-      active: true,
-      description:
-        "Frontend for a license plate recognition parking system delivered to an international client. React and Tailwind CSS interface over a Node-RED backend with MongoDB, covering live plate reads, access events and vehicle history. Client work — source and deployment are private.",
-      technologies: ["React", "Tailwind CSS", "Node-RED", "MongoDB", "Docker"],
-      links: [],
       image: "",
       video: "",
     },
