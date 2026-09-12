@@ -178,7 +178,7 @@ export const DATA = {
         },
       ],
       image: "",
-      video: "",
+      video: "/projects/node-red-rtu.mp4",
     },
     {
       title: "Bruce TUI",
@@ -196,7 +196,7 @@ export const DATA = {
         },
       ],
       image: "",
-      video: "",
+      video: "/projects/bruce.mp4",
     },
     {
       title: "SMS Broadcast",
@@ -214,7 +214,7 @@ export const DATA = {
         },
       ],
       image: "",
-      video: "",
+      video: "/projects/sms.mp4",
     },
     {
       title: "ConnexIA Soluciones",
@@ -231,7 +231,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
+      image: "/projects/connexia.png",
       video: "",
     },
     {
@@ -249,7 +249,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
+      image: "/projects/baco.png",
       video: "",
     },
     {
@@ -267,7 +267,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
+      image: "/projects/guachi.png",
       video: "",
     },
   ],
