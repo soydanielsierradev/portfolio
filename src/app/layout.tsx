@@ -63,14 +63,33 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      {/*
+        Browser extensions (ColorZilla, Grammarly, password managers) add their own
+        attributes to <body> before React hydrates, which React reports as a
+        hydration mismatch. The server never emits those attributes, so there is
+        nothing to fix in this tree. suppressHydrationWarning is scoped to this
+        element's own attributes and text — it does not silence its descendants —
+        so a real mismatch anywhere inside the app is still reported.
+      */}
       <body
+        suppressHydrationWarning
         className={cn(
           "min-h-screen bg-background font-sans antialiased relative",
           geist.variable,
           geistMono.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="light">
+        {/*
+          enableSystem={false} keeps dark as the guaranteed default: without it
+          next-themes follows the visitor's OS preference, so a light-mode OS
+          lands on the light theme despite defaultTheme. The toggle still lets
+          anyone switch to light manually.
+        */}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+        >
           <TooltipProvider delayDuration={0}>
             <div className="absolute inset-0 top-0 left-0 right-0 h-[100px] overflow-hidden z-0">
               <FlickeringGrid

@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
+import { WordRotate } from "@/components/magicui/word-rotate";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
 import ContactSection from "@/components/section/contact-section";
-import HackathonsSection from "@/components/section/hackathons-section";
 import ProjectsSection from "@/components/section/projects-section";
 import WorkSection from "@/components/section/work-section";
 import { ArrowUpRight } from "lucide-react";
@@ -20,12 +20,21 @@ export default function Page() {
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 gap-y-6 flex flex-col md:flex-row justify-between">
             <div className="gap-2 flex flex-col order-2 md:order-1">
-              <BlurFadeText
-                delay={BLUR_FADE_DELAY}
-                className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl"
-                yOffset={8}
-                text={`Hi, I'm ${DATA.name.split(" ")[0]}`}
-              />
+              {/*
+                BlurFade owns the mount animation for the whole heading;
+                WordRotate owns the ongoing rotation. "Hi, I'm" and the rotating
+                word are each their own block, so the word always sits on the
+                line below — otherwise short roles fit beside the greeting while
+                long ones wrap, which reads inconsistently.
+              */}
+              <BlurFade delay={BLUR_FADE_DELAY} yOffset={8}>
+                <h1 className="text-3xl font-semibold tracking-tighter sm:text-4xl lg:text-5xl">
+                  <span className="block">Hi, I&apos;m</span>
+                  <span className="block">
+                    <WordRotate words={DATA.heroRoles} />
+                  </span>
+                </h1>
+              </BlurFade>
               <BlurFadeText
                 className="text-muted-foreground max-w-[600px] md:text-lg lg:text-xl"
                 delay={BLUR_FADE_DELAY}
@@ -130,14 +139,18 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section id="projects">
+      {/*
+        Projects break out of the page's max-w-2xl column on desktop so three
+        cards per row have room. left-1/2 + -translate-x-1/2 re-centres the wider
+        band on the viewport; the max-w guard keeps a gutter if the window is
+        narrower than the band. Scoped to lg, so tablet/mobile stay in-column.
+      */}
+      <section
+        id="projects"
+        className="lg:relative lg:left-1/2 lg:w-[60rem] lg:max-w-[calc(100vw-3rem)] lg:-translate-x-1/2"
+      >
         <BlurFade delay={BLUR_FADE_DELAY * 11}>
           <ProjectsSection />
-        </BlurFade>
-      </section>
-      <section id="hackathons">
-        <BlurFade delay={BLUR_FADE_DELAY * 13}>
-          <HackathonsSection />
         </BlurFade>
       </section>
       <section id="contact">

@@ -76,7 +76,18 @@ export default function WorkSection() {
               </div>
             </div>
           </AccordionTrigger>
-          <AccordionContent className="p-0 ml-13 text-xs sm:text-sm text-muted-foreground">
+          {/*
+            forceMount keeps every description in the server-rendered HTML.
+            Without it Radix unmounts collapsed items, so the most substantive
+            copy on the page — what Daniel actually built at each job — is
+            invisible to search crawlers and to no-JS clients. Radix still adds
+            the `hidden` attribute while collapsed, so the accordion behaviour is
+            unchanged; the text is simply present in the source.
+          */}
+          <AccordionContent
+            forceMount
+            className="p-0 ml-13 text-xs sm:text-sm text-muted-foreground"
+          >
             {work.description}
           </AccordionContent>
         </AccordionItem>
