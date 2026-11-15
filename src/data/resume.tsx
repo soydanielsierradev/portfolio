@@ -37,7 +37,7 @@ export const DATA = {
     "a Telecom Engineer",
     "an Electronics Engineer",
   ],
-  url: "https://danielsierra.vercel.app",
+  url: "https://danielsierradev.vercel.app",
   location: "Havana, Cuba",
   locationLink: "https://www.google.com/maps/place/havana",
   description:
