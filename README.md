@@ -4,7 +4,7 @@ Personal site of Daniel Sierra, a telecommunications engineer who builds
 software. It presents his work in IoT monitoring, industrial protocols, and the
 web interfaces that turn sensor data into something people can use.
 
-Live at **[danielsierra.vercel.app](https://danielsierra.vercel.app)**.
+Live at **[danielsierradev.vercel.app](https://danielsierradev.vercel.app)**.
 
 ## Stack
 
